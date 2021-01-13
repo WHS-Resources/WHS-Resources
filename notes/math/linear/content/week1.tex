@@ -1,0 +1,86 @@
+\section{Week 1}
+\subsection{1/5/2021}
+\begin{itemize}
+    \item Two dimensional vector: $\langle v_1, v_2 \rangle \begin{bmatrix}
+        w_1 \\
+        w_2 \\
+    \end{bmatrix}$
+    \item The zero vector = $\langle 0, 0 \rangle$ or $\textbf{0}$
+    \item Linear combinations: linear combinations of $v$ and $w$ refer to any sum of multiples of the vectors. $$c\textbf{v} + d\textbf{w}$$ is a linear combination of $v$ and $w$
+    \item In 3-space, a 3 dimensional vector: $\textbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}, \textbf{v} = (v_1, v_2, v_3)$
+    \item Dot products: $\Vec{v} \cdot \Vec{w} = v_1w_1+v_2w_2...+v_nw_n$
+    \item Dot products are commutative.
+    \item A dot product of zero means the vectors orthogonal.
+    \item Contrived example: $v$ is a vector of weights and $w$ is a vector of distances. $v \cdot w = 0$ means the  system is balanced.
+    \item Contrived example 2: Expanding the previous problem to 3 dimensions, we can add more weights, $v= (4,2,100), w=(-1,2,0), v\cdot w = 0$
+    \item Economics example: Five products with prices $p_1, p_2, ..., p_5$ with quantity $q_1, q_2, ... q_5$. A dot product of zero would mean it breaks even.
+    \item Technically, $\textbf{0}$ is orthogonal to all vectors.
+    \item $\begin{bmatrix} 4 & 1 \\ 0 & 2 \\ 4 & 3\end{bmatrix} \begin{bmatrix} 3 \\ -2 \end{bmatrix} = \begin{bmatrix} 10 \\ -4 \\ 6\end{bmatrix}$
+    \item Linear combinations can also be seen as dot products.
+    \item The length or norm of a vector $||v|| = \sqrt{v_1^2 + v_2^2 + ... + v_n^2} = \sqrt{\Vec{v} \cdot \Vec{v}}$
+    \item Unit vector trick: if $\Vec{v} \cdot \Vec{v} = 1$ yes!
+    \item $\Vec{u} = \frac{\Vec{v}}{||\vec{v}||}$
+    \item If we know the angle $\theta$ a vector makes with the x-axis, the unit vector is $\langle cos\theta, sin\theta \rangle$
+    \item Given unit vectors with form $\langle cos\beta, sin\beta \rangle$ then the angle in between can be denoted by $\vec{u_1}\cdot \vec{u_2}=cos(\beta - \alpha)$
+    \item Schwarz Inequality: $|v\cdot w| \le ||v||||w||$
+\end{itemize}
+
+\subsection{1/6/2021}
+\begin{itemize}
+    \item $$n\cdot v=ax+by+cz=d$$
+    \item Planes are also linear combinations. Ex. $x-y-3z=0$ is a combination of vectors.
+    \item $x=y+3z$, set $y=z=0$, so $\langle 1, 1, 0\rangle$ is a vector. Then, set $y=0, z=1$, so we get $\langle 3, 0 ,1 \rangle$. Our combination is $y\begin{bmatrix}1\\1\\0\end{bmatrix}+z\begin{bmatrix}3\\0\\1\end{bmatrix}$
+    \item In case of a constant, ex. $x-y-3z=2$.
+    \item Start as if $d=0$, in this case giving us the same $y\begin{bmatrix}1\\1\\0\end{bmatrix}+z\begin{bmatrix}3\\0\\1\end{bmatrix}$, then simply add $\begin{bmatrix}2\\0\\0\end{bmatrix}$ for $y\begin{bmatrix}1\\1\\0\end{bmatrix}+z\begin{bmatrix}3\\0\\1\end{bmatrix}+\begin{bmatrix}2\\0\\0\end{bmatrix}$
+    \item Matrix notation. Ex. $a_{4 7}$, row 4, col 7
+    \item Identity matrix, denoted by $I$, is a square matrix with 1's along the main diagonal (where $i=j$)
+    \item $AI = A = IA$ if their multiplication dimensions are valid.
+    \item $$\begin{bmatrix}2&-1\\3&5\end{bmatrix}\begin{bmatrix}1&0&-1\\3&1&3\end{bmatrix}=\begin{bmatrix}-1&-1&-5\\ 18&5&12\end{bmatrix}$$
+    \item An item $A_{ij}$ = row $i \cdot$ column $j$
+    \item $\begin{bmatrix}0&1\\1&0\end{bmatrix}\begin{bmatrix}4\\5\end{bmatrix}=\begin{bmatrix}5\\4\end{bmatrix}$
+    \item Linear equations:
+    $$x+2y+3z=6$$
+    $$2x+5y+2z=4$$
+    $$6x-3y+z=2$$
+    \item Coefficient matrix $A=\begin{bmatrix}1&2&3\\2&5&2\\6&-3&-1\end{bmatrix}$
+    \item $$\begin{bmatrix}1&2&3\\2&5&2\\6&-3&-1\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}6\\4\\2\end{bmatrix}$$
+    \item $A\vec{x}=\vec{b}$
+    \item Different options
+    \begin{itemize}
+        \item No solutions
+        \item All planes are parallel
+        \item 2 are parallel + 3 intercept
+        \item Infinite solutions (share plane or share line)
+        \item One solution.
+    \end{itemize}
+\end{itemize}
+
+\subsection{1/7/2021}
+\begin{itemize}
+    \item In Algebra I, we solved 2x2 examples such as $$x-2y=1$$$$3x+2y=11$$
+    \item We would solve by adding together to get $4x=12$, $x=3$
+    \item We want our solution to form a triangle.
+    \item Elimination fails when there are no solutions.
+    \item Elimination also fails when there are infinitely many solutions. $$x-2y=1$$$$3x-6y=3$$
+    \item Take the equation $$\begin{bmatrix}2&4&-2\\4&9&-3\\-2&-3&7\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\8\\10\end{bmatrix}$$
+    \item We first solve to get $$\begin{bmatrix}2&4&-2\\1&3&11\\0&1&5\end{bmatrix}$$
+    \item Then we get the triangular system $$\begin{bmatrix}2&4&-2\\0&3&11\\0&0&4\end{bmatrix}$$
+    \item We have to multiply matrices. Each element is a dot product of a row of the first matrix with a column of the second ex. $b_{23}$ would come from taking the dot product of row 2 of the first matrix and column 3 of the second.
+    \item Associative $(AB)C=A(BC)$
+    \item \textbf{NOT COMMUTATIVE} $AB\neq BA$
+    \item $A\textbf{x}=\textbf{b}$
+    \item $A\longrightarrow$ Coefficient matrix
+    \item $x\longrightarrow$ Column vector of unknowns
+    \item $b\longrightarrow$ Column of scalars
+    \item What if we had $b=\begin{bmatrix}2\\8\\10\end{bmatrix}$ and wanted $b=\begin{bmatrix}2\\8\\10\end{bmatrix}$
+    \item To form our matrices, we will start with the identity matrix.
+    \item In the example above, we would have $$\begin{bmatrix}1&0&0\\-2&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}a\\b\\c\end{bmatrix}=\begin{bmatrix}a\\-2a+b\\c\end{bmatrix}$$
+    \item What would we use to add 5 times the second row to the third? $E_{32}$ do $i+j$ to the position to get $\begin{bmatrix}1&0&0\\0&1&0\\0&5&1\end{bmatrix}$
+    \item To subtract a multiple k of row $j$ from row $i$ is the identify matrix with a $-k$ in the $i, j$ position.
+    \item $$\begin{bmatrix}1&0&0\\0&1&0\\-4&0&1\end{bmatrix}\begin{bmatrix}1\\3\\9\end{bmatrix}=\begin{bmatrix}1\\3\\5\end{bmatrix}$$
+    \item Row exchange matrix (exchanges i and j) exchange them through the identity matrix. 
+    \item Ex. $i=1$ $j=3$, then we get matrix $\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix}$
+    \item Augmented Matrix includes the two sides of the equation.
+    \item Our example 4 images above would be $\begin{bmatrix}1&0&0&a\\-2&1&0&b\\0&0&0&c\end{bmatrix}$
+    
+\end{itemize}

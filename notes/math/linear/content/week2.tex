@@ -1,0 +1,51 @@
+\section{Week 2}
+\subsection{1/12/2020}
+\begin{itemize}
+    \item For multiplication, the entry in row $i$ column $j$ is the dot of row $i$ of A and column $j$ of B.
+    \item Distributed from the left and right
+    \item Associative
+    \item Suppose A is a square matrix. $A^{-1}$ is a matrix of the same such that:
+    \item $AI = IA = A$
+    \item $A^{-1}A=AA^{-1}=I$
+    \item An inverse matrix may not exist if
+    \begin{itemize}
+        \item not square
+        \item if any row is a linear combination of other rows
+    \end{itemize}
+    \item If an inverse matrix exists, it is really helpful to solve a system of equations.
+    \item A $2\times 2$ matrix is invertible if and only if $ad-bc$, the determinant, is not zero. In this case, we find the inverse of a 2x2 matrix.
+    $$A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$$
+    $$A^{-1}=\frac{1}{|A|}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$$
+    \item A diagonal matrix of any size is invertible when none of the diagonal entries are zero.
+    \item If they are invertible $(AB)^{-1} = B^{-1}A^{-1}$
+    \item Any matrix that causes a known change, should be easy to invert. We have to think of a matrix that would undo what is done.
+    Ex. $$E=\begin{bmatrix}1&0&0\\-5&1&0\\0&0&1\end{bmatrix}$$ subtracts 5 times row1 from row2
+    \item So we would want something that adds 5 times row1 to row2
+    Result:
+    $$E=\begin{bmatrix}1&0&0\\5&1&0\\0&0&1\end{bmatrix}$$
+    \item $$P^{-1} = P^{12} = \begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}$$
+    \item When the inverse is not immediately obvious, one method of calculating it is called the Gauss-Jordan method. This is done by.
+    \begin{enumerate}
+        \item Putting the matrix you wish to invert next to the identity matrix
+        \item Use row transformations (elimination) to transform your matrix into the identity.
+        \item The identity will have been transformed into the inverse matrix.
+    \end{enumerate}
+    \item Ex. $$A=\begin{bmatrix}2&-1&0&1&0&0\\-1&2&-1&0&1&0\\0&-1&2&0&0&1\end{bmatrix}$$
+    \item $2R_2+R_1$
+    $$A=\begin{bmatrix}2&-1&0&1&0&0\\0&3&-2&1&2&0\\0&-1&2&0&0&1\end{bmatrix}$$
+    \item $3R_3+R_2$
+    $$A=\begin{bmatrix}2&-1&0&1&0&0\\0&3&-2&1&2&0\\0&0&4&1&2&3\end{bmatrix}$$
+    \item $2R_2+R_3$
+    $$A=\begin{bmatrix}2&-1&0&1&0&0\\0&6&0&3&6&3\\0&0&4&1&2&3\end{bmatrix}$$
+    \item $6R_1+R_2$
+    $$A=\begin{bmatrix}12&0&0&9&6&3\\0&6&0&3&6&3\\0&0&4&1&2&3\end{bmatrix}$$
+    $$A=\begin{bmatrix}12&0&0&9&6&3\\0&6&0&3&6&3\\0&0&4&1&2&3\end{bmatrix}\begin{bmatrix}\frac{1}{12}\\\frac{1}{6}\\\frac{1}{4}\end{bmatrix}=\begin{bmatrix}1&0&0&3/4&1/2&1/4\\0&1&0&1/2&1&1/2\\0&0&1&1/4&1/2&3/4\end{bmatrix}$$
+\end{itemize}
+
+\subsection{1/13/2021}
+\begin{itemize}
+    \item We are trying to factorize for the lower and upper triangular matrices.
+    \item Ex. $\begin{bmatrix}1&0\\-3&1\end{bmatrix}\begin{bmatrix}2&1\\6&8\end{bmatrix}=\begin{bmatrix}2&1\\0&5\end{bmatrix}$
+    \item every $E^{-1}_{ij}$ matrix is lower triangular, with 1's on the main diagonal. The off diagonla entry is +k to undo the elimination done by the - k when multiplied from the left by $E_{ij}$
+    \item The product of several elimination matrices is still lower triangular.
+\end{itemize}
