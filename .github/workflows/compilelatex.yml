@@ -10,4 +10,4 @@ jobs:
         uses: dante-ev/latex-action@master
         with:
           root_file: |
-            notes\math\linear\main.tex
+            notes/math/linear/main.tex
