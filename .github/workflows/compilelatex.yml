@@ -7,6 +7,6 @@ jobs:
             - name: Set up Git repository
               uses: actions/checkout@v1
             - uses: xu-cheng/latex-action@v2
-            with:
-                root_file: |
-                    notes/math/linear/main.tex
+              with:
+                  root_file: |
+                      notes/math/linear/main.tex
