@@ -1,20 +1,22 @@
 name: Github Actions CI
-on: push
+on:
+  push:
+    branches:
+      - main
 jobs:
   build:
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
     - name: Set up Git repository
       uses: actions/checkout@v2
-    - name: Compile LaTeX document
-      uses: xu-cheng/latex-action@v2
+    - name: Compile Slides
+      uses: xu-cheng/latex-action@master
       with:
         root_file: notes/math/linear/main.tex
-    - name: Check pdf file
+    - name: Check pdf files
       run: |
         file main.pdf | grep -q ' PDF '
-    - name: Upload main.pdf
+    - name: Upload
       run: |
         # configure git
         git config --global user.name "HarryWangATX"
@@ -25,12 +27,11 @@ jobs:
         echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
         git config --global core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
-        git clone --depth=1 git@github.com:nwatx/WHS-Resources.git "$GITHUB_WORKSPACE/WHS-Resources"
-        cp -f main.pdf "$GITHUB_WORKSPACE/WHS-Resources/file/cv.pdf"
-        cd "$GITHUB_WORKSPACE/WHS-Resources"
-        git add file/main.pdf
-        git commit -m "[github actions] update main"
+        git clone --depth=1 --branch gh-pages git@github.com:nwatx/WHS-Resources.git "$GITHUB_WORKSPACE/deploy"
+        cp -f main.pdf "$GITHUB_WORKSPACE/deploy/main.pdf"
+        cd "$GITHUB_WORKSPACE/deploy"
+        git add main.pdf
+        git commit -m "[github actions] deploy"
         git push
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
