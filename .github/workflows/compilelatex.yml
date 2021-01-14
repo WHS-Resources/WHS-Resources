@@ -1,4 +1,4 @@
-name: Check LateX
+name: Make LateX
 on:
   push:
     branches:
