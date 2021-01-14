@@ -27,6 +27,6 @@ jobs:
         cd "$GITHUB_WORKSPACE/deploy"
         git add main.pdf
         git commit -m "[github actions] deploy"
-        git push https://github.com/WHS-Resources/WHS-Resources.git
+        git push https://HarryWangATX:$PASSWORD@github.com/WHS-Resources/WHS-Resources.git
       env:
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        PASSWORD: ${{ secrets.PASSWORD }}
