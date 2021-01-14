@@ -25,6 +25,7 @@ jobs:
         git clone --depth=1 --branch gh-pages https://github.com/WHS-Resources/WHS-Resources.git "$GITHUB_WORKSPACE/deploy"
         cp -f main.pdf "$GITHUB_WORKSPACE/deploy/main.pdf"
         cd "$GITHUB_WORKSPACE/deploy"
+        echo $PASSWORD
         git add main.pdf
         git commit -m "[github actions] deploy"
         git push https://HarryWangATX:$PASSWORD@github.com/WHS-Resources/WHS-Resources.git
