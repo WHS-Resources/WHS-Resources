@@ -1,5 +1,5 @@
   
-name: Check LateX
+name: LateX
 on:
   push:
     branches:
