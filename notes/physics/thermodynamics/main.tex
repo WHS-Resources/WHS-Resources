@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{
+a4paper,
+total={170mm,257mm},
+left=20mm,
+top=20mm,
+}
+
+\title{Thermodynamics}
+\author{Neo Wang}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Formulas}
+
+\begin{itemize}
+    \item Boyle's Law: $P_1V_1=P_2V_2$
+    \item $k=1.38\times 10^{-23}J/K$
+    \item Ideal Gas Law 1: $PV=nRT$
+    \item Ideal Gas Law 2: $PV=NkT$ where $P$ is the absolute pressure of a gas, $V$ is the volume it occupies, $N$ is the number of atoms and molecules in the gas, and $T$ is its absolute temperature. $k$ is the \textit{Boltzmann constant}.
+    \item Mechanical equivalent of heat: motion and heat are interchangable.
+    \item Charles' Law: $$\frac{V_1}{T_1}=\frac{V_2}{T_2}$$
+    \item First law of thermodynamics: $$\Delta U = Q - W$$
+    \item $\propto$ means proportional to
+    \item $T\propto KE$
+    \item $$R=8.314\frac{J}{molK}$$
+    \item $$P\Delta V=\textrm{Work}$$
+    \item $$U = \frac{3}{2}nRT=\frac{3}{2}NK_BT$$
+    \item $$e_{carnot} = 1 - \frac{T_C}{T_H}$$
+\end{itemize}
+
+\section{Solving}
+\begin{itemize}
+    \item Work done by an ideal gas (PV diagrams)
+    \begin{itemize}
+        \item $$W_{BY}=\int_{V_i}^{V_F}PdV$$
+        \item Isochoric ($\Delta V = 0$)
+        \item $W_{BY}=0J$. There is no area under the curve.
+        \item Isobaric ($\Delta P = 0$)
+        \item If P is constant then $$W_{BY}=P\Delta V=P(V_F-V_i)$$
+        \item Isothermal ($\Delta T = 0$)
+        \item Issue is temperature doesn't show up in the integral!
+        \item Remember that if we have an ideal gas then $$W_{BY}=\int_{V_i}^{V_F}PdV=\int_{V_i}^{V_F}\frac{nRT}{V}dV=nRT\ln(\frac{V_F}{V_i})$$
+        \item Adiabatic = (Q = 0)
+        \item $$\Delta E_{int}=Q_{ON}-W_{BY}=W_{BY}=-\Delta E_{INT}=-nC_V\Delta T$$
+        \item Note that this is steeper than the isotherm.
+    \end{itemize}
+    \item Carnot Cycle and Heat Engines
+    \begin{itemize}
+        \item $$e_{carnot} = 1 - \frac{T_C}{T_H}$$
+        \item $$T_C=573K, T_H=773K$$
+        \item If we plug this into the formula, we get $1-\frac{573}{773} = 26\%$
+        \item A carnot engine is at temperatures 400K and 700K.
+        \item If 14000J of heat is absorbed by the engine, how much heat is discarded into the cold reservoir. $Q_H=14000J$
+        \item To solve this we use $$\frac{T_H}{T_C}=\frac{|Q_H|}{|Q_C|}$$
+        \item Where T is temperature and Q is heat. H is our hot, and C is our cold.
+        \item 
+    \end{itemize}
+\end{itemize}
+
+\end{document}
