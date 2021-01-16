@@ -24,7 +24,6 @@ jobs:
         git config --global user.email "harrynicomama@gmail.com"
         # setup ssh
 
-        echo "$DEPLOY_KEY" | base64
 
         mkdir ~/.ssh
         chmod 700 ~/.ssh
