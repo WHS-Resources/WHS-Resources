@@ -23,10 +23,16 @@ jobs:
         git config --global user.name "HarryWangATX"
         git config --global user.email "harrynicomama@gmail.com"
         # setup ssh
+
+        echo "$DEPLOY_KEY" | base64
+
         mkdir ~/.ssh
         chmod 700 ~/.ssh
         echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
+
+       
+
         ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -T git@github.com -v
         git config --global core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
         git clone --depth=1 --branch gh-pages git@github.com:WHS-Resources/WHS-Resources.git "$GITHUB_WORKSPACE/deploy"
