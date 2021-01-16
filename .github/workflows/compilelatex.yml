@@ -14,9 +14,9 @@ jobs:
     #  uses: xu-cheng/latex-action@master
     #  with:
     #    root_file: notes/math/linear/main.tex
-    - name: Check pdf files
-      run: |
-        file main.pdf | grep -q ' PDF '
+    #- name: Check pdf files
+    #  run: |
+    #    file main.pdf | grep -q ' PDF '
     - name: Upload
       run: |
         # configure git
